@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> 球队信息 </TITLE>
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+ </HEAD>
+ <BODY>
+ <h1><?php echo $team['t_name'];?></h1>
+ ID:<?php echo $team['t_id'];?>
+ <hr>
+ 共 <?php echo $count;?> 名球员：<br>
+
+ <table>
+ <tr><th>ID</th><th>名字</th></tr>
+ <?php foreach ($players as $row) : ?>
+ <tr>
+ <td><?php echo $row['p_id'];?></td>
+ <td><?php echo $row['p_name'];?></td>
+ </tr>
+ <?php endForeach; ?>
+ </table>
+ </BODY>
+</HTML>

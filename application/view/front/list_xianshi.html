@@ -1,0 +1,21 @@
+<!-- 展示数据 模板文件 视图层代码 -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> 都来欧冠 </TITLE>
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+ </HEAD>
+ <BODY>
+ <table>
+ <tr><th>主队</th><th>比分</th><th>客队</th><th>时间</th></tr>
+ <?php foreach ($list as $row) : ?>
+ <tr>
+ <td><a href="index.php?c=ouguan&a=team&t_id=<?php echo $row['h_id'];?>"><?php echo $row['ht_name'];?></a></td>
+ <td><?php echo $row['h_score'];?>:<?php echo $row['g_score'];?></td>
+ <td><a href="index.php?c=ouguan&a=team&t_id=<?php echo $row['g_id'];?>"><?php echo $row['gt_name'];?></a></td>
+ <td><?php echo date('m-d H:i', $row['m_time']);?></td>
+ </tr>
+ <?php endForeach; ?>
+ </table>
+ </BODY>
+</HTML>
